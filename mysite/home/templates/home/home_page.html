@@ -1,0 +1,17 @@
+
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-homepage{% endblock %}
+
+
+
+{% block content %}
+
+    <h1 class="pageTitle">{{ page.title }}</h1
+        > 
+    <div class="homeBody">{{ page.body|richtext }}</div> 
+
+    <h1 class="linkToBlog"><a class="linkText" href="http://127.0.0.1:8000/blog/">Go to Blog</a></h1>
+{% endblock %}
+

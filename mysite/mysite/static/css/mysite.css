@@ -1,0 +1,52 @@
+.pageTitle{
+    color: green;
+    font-family: fantasy;
+    /* font-size: 150%; */
+    text-align: center;
+    border-bottom: 1px solid black;
+    width: 20%;
+    margin-left: 40%;
+    
+}
+
+button{
+    margin: 0 0 2% 0;
+}
+
+.card{
+    width: 40%;
+    height: 18%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border: 1px solid black;
+    box-shadow: 5px 8px #888888;
+    margin-left: 29.5%;
+}
+
+.fullWidth{
+    width: 100%;
+}
+
+.right{
+    float: right;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.linkToBlog{
+    text-align: center;
+    width: 100%;
+
+}
+
+.homeBody{
+    text-align: center;
+}
+
+.linkText:hover{
+    color: red;
+    font-weight: bold;
+
+}

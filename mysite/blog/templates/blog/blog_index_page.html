@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-blogindexpage{% endblock %}
+
+{% block content %}
+    <h1 class="pageTitle">{{ page.title }}</h1>
+
+    <!-- <div class="intro">{{ page.intro|richtext }}</div> -->
+  
+    {% for post in blogpages %}
+    <div class="card ">
+        <h1 class="centerText" class="title"><a class="linkText" href="{% pageurl post %}">{{ post.title }}</a></h1>
+        <div class="centerText">
+                {{ post.specific.intro }}
+                {{ post.specific.body|richtext }}
+        </div>      
+    </div>    
+
+    {% endfor %}
+
+    <div class="fullWidth centerText">
+        <a class="linkText" href="http://127.0.0.1:8000/">Go to Home page</a>
+
+    </div>
+    
+
+{% endblock %}

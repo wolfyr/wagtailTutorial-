@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+
+    {% if request.GET.tag|length %}
+        <h4 class="centerText">Pages that have a "{{ request.GET.tag }}" tag</h4>
+    {% endif %}
+
+    {% for blogpage in blogpages %}
+
+        <div class="card">
+            <p class="centerText">
+                <strong><a class="linkText" href="{% pageurl blogpage %}">{{ blogpage.title }}</a></strong><br />
+                <small>Revised: {{ blogpage.latest_revision_created_at }}</small><br />
+                {% if blogpage.author %}
+                    <p>By {{ blogpage.author.profile }}</p>
+                {% endif %}
+            </p>
+
+        </div>
+          
+
+    {% empty %}
+        No pages found with that tag.
+    {% endfor %}
+
+    <div class="fullWidth centerText">
+            <a class="linkText" href="http://127.0.0.1:8000/blog">Go to Blog page</a><br>
+            <a class="linkText" href="http://127.0.0.1:8000/">Go to Home page</a>
+    
+        </div>
+
+{% endblock %}
